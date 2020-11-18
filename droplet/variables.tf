@@ -6,7 +6,7 @@ variable do_token {
 variable droplet_name {
   description = "Name of the Droplet to Create"
   type = string
-  default = "Ubuntu-1"
+  default = "Ubuntu-2"
 }
 
 variable image_name {
@@ -15,7 +15,7 @@ variable image_name {
   default = "ubuntu-20-04-x64"
 }
 
-variable region {
+variable do_region {
   description = "The region to create the droplet"
   type = string
   default = "nyc1"
