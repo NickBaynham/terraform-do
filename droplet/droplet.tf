@@ -1,6 +1,11 @@
 resource "digitalocean_droplet" "ubuntu_1" {
-  image = "ubuntu-20-04-x64"
-  name = "ubuntu-1"
-  region = "nyc1"
-  size = "512mb"
+  image = var.image_name
+  name = var.droplet_name
+  region = var.region
+  size = var.droplet_size
+  ssh_keys = [data.digitalocean_ssh_key.ssh_key.id]
+}
+
+data "digitalocean_droplet" "created_droplet" {
+  name = var.droplet_name
 }
